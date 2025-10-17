@@ -36,7 +36,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 60),
-                
+
                 // Logo and title
                 Column(
                   children: [
@@ -72,9 +72,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     ),
                   ],
                 ),
-                
+
                 const SizedBox(height: 48),
-                
+
                 // Email field
                 TextFormField(
                   controller: _emailController,
@@ -94,9 +94,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Password field
                 TextFormField(
                   controller: _passwordController,
@@ -106,7 +106,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     prefixIcon: const Icon(Icons.lock_outlined),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                        _obscurePassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() {
@@ -126,9 +128,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 24),
-                
+
                 // Sign in button
                 ElevatedButton(
                   onPressed: _isLoading ? null : _signIn,
@@ -142,7 +144,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           width: 20,
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              Colors.white,
+                            ),
                           ),
                         )
                       : const Text(
@@ -154,9 +158,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           ),
                         ),
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Sign up link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -179,9 +183,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     ),
                   ],
                 ),
-                
+
                 const SizedBox(height: 24),
-                
+
                 // Google sign in
                 OutlinedButton.icon(
                   onPressed: _isLoading ? null : _signInWithGoogle,
@@ -211,7 +215,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         _emailController.text.trim(),
         _passwordController.text,
       );
-      
+
       if (mounted) {
         Navigator.pushReplacementNamed(context, '/main');
       }

@@ -157,7 +157,7 @@ class DemoDataService {
         'location': 'Online Event',
         'coordinates': null,
         'organizer': 'Climate Action Network',
-        'contactInfo': 'summit@climateaction.org',
+        'email': 'summit@climateaction.org',
         'images': ['https://example.com/summit1.jpg'],
         'price': 0.0,
         'currency': 'USD',
