@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "867327943539",
+    "project_id": "eco-54d2b",
+    "storage_bucket": "eco-54d2b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:867327943539:android:79fa68575d4e0f6b7d1b06",
+        "android_client_info": {
+          "package_name": "com.example.eco_trail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Z5iw5WZHcXYGv7WfE84tUADBGEN7R8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -137,7 +137,8 @@ class LocationDetailsBottomSheet extends StatelessWidget {
           ],
 
           // Contact information
-          if (location.contactInfo.isNotEmpty ||
+          if (location.phone.isNotEmpty ||
+              location.email.isNotEmpty ||
               location.website.isNotEmpty) ...[
             const Text(
               'Contact Information',
@@ -148,11 +149,17 @@ class LocationDetailsBottomSheet extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            if (location.contactInfo.isNotEmpty)
+            if (location.phone.isNotEmpty)
               _buildContactItem(
                 Icons.phone,
-                location.contactInfo,
-                () => _launchPhone(location.contactInfo),
+                location.phone,
+                () => _launchPhone(location.phone),
+              ),
+            if (location.email.isNotEmpty)
+              _buildContactItem(
+                Icons.email,
+                location.email,
+                () => _launchEmail(location.email),
               ),
             if (location.website.isNotEmpty)
               _buildContactItem(
@@ -258,6 +265,13 @@ class LocationDetailsBottomSheet extends StatelessWidget {
     final Uri phoneUri = Uri(scheme: 'tel', path: phoneNumber);
     if (await canLaunchUrl(phoneUri)) {
       await launchUrl(phoneUri);
+    }
+  }
+
+  Future<void> _launchEmail(String email) async {
+    final Uri emailUri = Uri(scheme: 'mailto', path: email);
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
     }
   }
 

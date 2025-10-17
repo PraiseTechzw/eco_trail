@@ -77,7 +77,9 @@ class EventCard extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    event.isOnline ? Icons.computer : Icons.location_on,
+                    (event.latitude == 0.0 && event.longitude == 0.0)
+                        ? Icons.computer
+                        : Icons.location_on,
                     size: 16,
                     color: AppColors.primaryGreen,
                   ),

@@ -41,46 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'your-web-api-key',
-    appId: 'your-web-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    authDomain: 'your-project-id.firebaseapp.com',
-    storageBucket: 'your-project-id.appspot.com',
+    apiKey: 'AIzaSyCsN3hMP-CTMXRQ9bqnG63JKpKU1Hl__BY',
+    appId: '1:867327943539:web:75d012af7a7131037d1b06',
+    messagingSenderId: '867327943539',
+    projectId: 'eco-54d2b',
+    authDomain: 'eco-54d2b.firebaseapp.com',
+    storageBucket: 'eco-54d2b.firebasestorage.app',
+    measurementId: 'G-Y2MXPVFENN',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'your-android-api-key',
-    appId: 'your-android-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    storageBucket: 'your-project-id.appspot.com',
+    apiKey: 'AIzaSyD2Z5iw5WZHcXYGv7WfE84tUADBGEN7R8Y',
+    appId: '1:867327943539:android:79fa68575d4e0f6b7d1b06',
+    messagingSenderId: '867327943539',
+    projectId: 'eco-54d2b',
+    storageBucket: 'eco-54d2b.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'your-ios-api-key',
-    appId: 'your-ios-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    storageBucket: 'your-project-id.appspot.com',
+    apiKey: 'AIzaSyClQS0PmkhXw4017WxnENIGxbE4MHDtgkI',
+    appId: '1:867327943539:ios:e9f1d1eebb3afe9f7d1b06',
+    messagingSenderId: '867327943539',
+    projectId: 'eco-54d2b',
+    storageBucket: 'eco-54d2b.firebasestorage.app',
     iosBundleId: 'com.example.ecoTrail',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'your-macos-api-key',
-    appId: 'your-macos-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    storageBucket: 'your-project-id.appspot.com',
+    apiKey: 'AIzaSyClQS0PmkhXw4017WxnENIGxbE4MHDtgkI',
+    appId: '1:867327943539:ios:e9f1d1eebb3afe9f7d1b06',
+    messagingSenderId: '867327943539',
+    projectId: 'eco-54d2b',
+    storageBucket: 'eco-54d2b.firebasestorage.app',
     iosBundleId: 'com.example.ecoTrail',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'your-windows-api-key',
-    appId: 'your-windows-app-id',
-    messagingSenderId: 'your-sender-id',
-    projectId: 'your-project-id',
-    authDomain: 'your-project-id.firebaseapp.com',
-    storageBucket: 'your-project-id.appspot.com',
+    apiKey: 'AIzaSyCsN3hMP-CTMXRQ9bqnG63JKpKU1Hl__BY',
+    appId: '1:867327943539:web:7cfdf934b3ba6dc57d1b06',
+    messagingSenderId: '867327943539',
+    projectId: 'eco-54d2b',
+    authDomain: 'eco-54d2b.firebaseapp.com',
+    storageBucket: 'eco-54d2b.firebasestorage.app',
+    measurementId: 'G-2LMDTKVH6L',
   );
+
 }

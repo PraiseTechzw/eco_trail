@@ -12,8 +12,15 @@ import 'features/events/presentation/pages/events_page.dart';
 import 'features/bookings/presentation/pages/bookings_page.dart';
 import 'features/profile/presentation/pages/profile_page.dart';
 import 'features/tips/presentation/pages/tips_page.dart';
+import 'features/reviews/presentation/pages/reviews_page.dart';
+import 'features/auth/presentation/pages/login_page.dart';
+import 'features/auth/presentation/pages/register_page.dart';
+import 'widgets/splash_screen.dart';
+import 'widgets/onboarding_screen.dart';
 import 'features/tips/data/services/demo_tips_service.dart';
 import 'features/reviews/data/services/demo_reviews_service.dart';
+import 'features/events/data/services/demo_events_service.dart';
+import 'features/map/data/services/demo_locations_service.dart';
 import 'core/services/offline_service.dart';
 import 'core/widgets/offline_indicator.dart';
 import 'core/services/accessibility_service.dart';
@@ -41,6 +48,8 @@ void main() async {
   try {
     await DemoTipsService.populateSampleTips();
     await DemoReviewsService.populateSampleReviews();
+    await DemoEventsService.populateSampleEvents();
+    await DemoLocationsService.populateSampleLocations();
   } catch (e) {
     print('Error populating demo data: $e');
   }
@@ -61,7 +70,14 @@ class EcoTrailApp extends ConsumerWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,
-      home: const MainNavigationPage(),
+      home: const SplashScreen(),
+      routes: {
+        '/splash': (context) => const SplashScreen(),
+        '/onboarding': (context) => const OnboardingScreen(),
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/main': (context) => const MainNavigationPage(),
+      },
     );
   }
 }
