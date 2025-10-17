@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app_colors.dart';
+import 'app_theme_extensions.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
@@ -11,9 +12,15 @@ class AppTheme {
         brightness: Brightness.light,
         primary: AppColors.primaryGreen,
         secondary: AppColors.secondaryGreen,
-        surface: AppColors.offWhite,
+        tertiary: AppColors.teal,
+        surface: AppColors.surfaceLight,
+        surfaceContainerHighest: AppColors.surfaceMedium,
         background: AppColors.cream,
         error: AppColors.error,
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
+        onSurface: AppColors.charcoal,
+        onBackground: AppColors.charcoal,
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.primaryGreen,
@@ -109,10 +116,11 @@ class AppTheme {
           fontWeight: FontWeight.w500,
           color: AppColors.mediumGray,
         ),
-        bodyLarge: TextStyle(fontSize: 16, color: AppColors.darkGray),
-        bodyMedium: TextStyle(fontSize: 14, color: AppColors.darkGray),
+        bodyLarge: TextStyle(fontSize: 16, color: AppColors.charcoal),
+        bodyMedium: TextStyle(fontSize: 14, color: AppColors.charcoal),
         bodySmall: TextStyle(fontSize: 12, color: AppColors.mediumGray),
       ),
+      extensions: const [AppThemeExtensions.light],
     );
   }
 
@@ -120,30 +128,36 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.primaryGreen,
+        seedColor: AppColors.lightGreen,
         brightness: Brightness.dark,
         primary: AppColors.lightGreen,
-        secondary: AppColors.secondaryGreen,
-        surface: const Color(0xFF1A1A1A),
-        background: const Color(0xFF121212),
+        secondary: AppColors.accentGreen,
+        tertiary: AppColors.lightTeal,
+        surface: AppColors.darkSurface,
+        surfaceContainerHighest: AppColors.darkSurfaceVariant,
+        background: AppColors.darkSurface,
         error: AppColors.error,
+        onPrimary: AppColors.charcoal,
+        onSecondary: AppColors.charcoal,
+        onSurface: AppColors.darkOnSurface,
+        onBackground: AppColors.darkOnSurface,
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: Color(0xFF1A1A1A),
-        foregroundColor: Colors.white,
+        backgroundColor: AppColors.darkSurface,
+        foregroundColor: AppColors.darkOnSurface,
         elevation: 0,
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: Color(0xFF1A1A1A),
+        backgroundColor: AppColors.darkSurface,
         selectedItemColor: AppColors.lightGreen,
-        unselectedItemColor: AppColors.mediumGray,
+        unselectedItemColor: AppColors.darkOnSurfaceVariant,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
       cardTheme: const CardThemeData(
-        color: Color(0xFF2A2A2A),
+        color: AppColors.darkSurfaceVariant,
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -152,7 +166,7 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.lightGreen,
-          foregroundColor: AppColors.darkGray,
+          foregroundColor: AppColors.charcoal,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         ),
@@ -163,19 +177,20 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.mediumGray),
+          borderSide: const BorderSide(color: AppColors.darkOnSurfaceVariant),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.mediumGray),
+          borderSide: const BorderSide(color: AppColors.darkOnSurfaceVariant),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: AppColors.lightGreen, width: 2),
         ),
         filled: true,
-        fillColor: const Color(0xFF2A2A2A),
+        fillColor: AppColors.darkSurfaceVariant,
       ),
+      extensions: const [AppThemeExtensions.dark],
     );
   }
 }
